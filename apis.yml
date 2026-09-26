@@ -1,23 +1,60 @@
 aid: auction
+
 name: Auction
-description: 'Auction is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Auction is a technology platform that provides online auction services, enabling users to list, bid on, and purchase items in real-time. The company focuses on creating a secure, transparent, and user-friendly marketplace for both consumers and businesses, offering features such as automated bidding, auction scheduling, and detailed analytics for sellers. While currently a stub in the API Evangelist network, Auction aims to expose its functionality through APIs for integration with third‑party applications and services.'
+
 url: https://raw.githubusercontent.com/api-evangelist/auction/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Auction
+- Marketplace
+- Bidding
+- E-commerce
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/auction-hosts.yml
+- type: Vendors
+  url: vendors/auction-vendors.yml
+- type: DomainSecurity
+  url: security/auction-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/auction
+  url: https://www.auction.com
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: API host https://api.auction.com returns 403 and no machine‑readable spec, and the website renders only a JavaScript shell.
+  evidence:
+    - url: https://api.auction.com/openapi.json
+      status: 403
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
